@@ -12,3 +12,15 @@ Flask-WTF
 Flask-Migrate  
 Sqlite3
 ## Getting Started
+First navigate to 'project' folder and set up a venv on top of the 'requirements.txt' file.  
+Then do migrations:  
+```
+flask --app project db init &&
+flask --app project db migrate &&
+flask --app project db upgrade
+```  
+Then run the app with:  
+```
+flask --app project run
+```
+Or you can set an environment variable 'FLASK_APP' as 'project', then do all Flask commands as `flask <command>` without the `--app <app name>` option.
