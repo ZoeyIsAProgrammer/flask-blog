@@ -1,6 +1,7 @@
 # Flask Blog Project
 Introduction:  
 This is a simple blog website built with Flask, where you can register, login, logout a user, create, update, delete and view blogs.  
+The website is live at my VPS: [https://www.sawyerguan.top/](https://www.sawyerguan.top/) where I use Gunicorn and Nginx to serve it, and still just using a Sqlite3 DB for it.
 
 Technologies I used in this project:  
 Flask  
