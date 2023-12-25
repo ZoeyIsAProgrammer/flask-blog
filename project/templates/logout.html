@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{% block title %}Logged out{% endblock %}</h1>
+<h4>You are logged out, want to <a href="{{url_for('auth.login')}}">sign in</a>?</h4>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+<h1>{% block title %}{%if edit%}Update Post{%else%}Create a New Post{%endif%}{% endblock %}</h1>
+
+<!-- NATIVE HTML FORM -->
+<!-- <form action="{{ url_for('main.create') }}" method="post">
+    <div class="form-group">
+        <label for="title">Title: </label>
+        <input type="text" placeholder="Post Title" name="title" class="form-control" value="{{request.form['title']}}">
+    </div>
+    <div class="form-group">
+        <label for="body">Content: </label>
+        <textarea name="body" id="" cols="30" rows="10" placeholder="Post Content" class="form-control">{{request.form['body']}}</textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form> -->
+
+<!-- WTFORMS -->
+<!-- <form method="POST" action="" novalidate="true">
+    {{ form.csrf_token }}
+    <div class="form-group">
+        {{ form.title.label(class="form-label") }}
+        {{ form.title(class="form-control") }}
+        {% for error in form.title.errors %}
+            <p class="text-danger">{{ error }}</p>
+        {% endfor %}
+    </div>
+    <div class="form-group">
+        {{ form.body.label(class="form-label") }}
+        {{ form.body(class="form-control") }}
+        {% for error in form.body.errors %}
+            <p class="text-danger">{{ error }}</p>
+        {% endfor %}
+    </div>
+    {{ form.submit(class="btn btn-primary") }}
+</form> -->
+
+<!-- FLASK BOOTSTRAP WTFORMS -->
+{{ wtf.quick_form(form, novalidate=True, button_map={"submit": "info"}) }}
+
+{% endblock %}

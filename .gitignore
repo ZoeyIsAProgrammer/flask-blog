@@ -1,0 +1,4 @@
+migrations/
+venv/
+instance/
+__pycache__/
